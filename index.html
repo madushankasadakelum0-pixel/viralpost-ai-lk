@@ -150,6 +150,48 @@ document.getElementById("tags").innerText =
 
 }
 </script>
+<script>
+function generateLongPost(){
 
+let topic = document.getElementById("longTopic").value;
+let style = document.getElementById("style").value;
+let length = document.getElementById("length").value;
+
+if(topic === ""){
+alert("Please enter a topic");
+return;
+}
+
+// base content
+let text = "Today we are discussing " + topic + ". ";
+
+// style change
+if(style === "Informative"){
+text += "This topic is very important and provides deep knowledge. ";
+}
+else if(style === "Story Style"){
+text += "Let’s explore this as a real-life inspiring story. ";
+}
+else if(style === "Motivational"){
+text += "This can truly change your mindset and life. ";
+}
+else{
+text += "From a business point of view, this has strong potential. ";
+}
+
+// expand to make long text
+let repeat = length / 150;
+
+for(let i = 0; i < repeat; i++){
+text += topic + " is growing in importance across the world. ";
+text += "People are engaging with this topic more than ever before. ";
+text += "It is shaping the future in many ways. ";
+}
+
+// output
+document.getElementById("longPost").innerText = text;
+
+}
+</script>
 </body>
 </html>
