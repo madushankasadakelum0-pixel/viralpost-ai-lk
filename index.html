@@ -19,24 +19,24 @@ body{
     padding:15px;
     text-align:center;
     border-radius:10px;
+    margin-bottom:15px;
 }
 .card{
     background:white;
     padding:15px;
-    margin-top:15px;
     border-radius:10px;
+    margin-bottom:15px;
     box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 input,select{
     width:100%;
     padding:10px;
-    margin-top:10px;
-    border-radius:8px;
+    margin-top:8px;
+    margin-bottom:10px;
 }
 button{
     width:100%;
     padding:12px;
-    margin-top:10px;
     background:#1877f2;
     color:white;
     border:none;
@@ -46,24 +46,24 @@ button{
 .result{
     background:#f7f7f7;
     padding:10px;
-    margin-top:10px;
     border-radius:8px;
+    margin-top:10px;
 }
 .percent{
-    font-size:35px;
-    color:green;
-    text-align:center;
+    font-size:40px;
+    color:#28a745;
+    font-weight:bold;
 }
 </style>
-
 </head>
+
 <body>
 
 <div class="container">
 
 <div class="header">
-<h2>⚡ Caption Quick AI</h2>
-<p>Generate Viral Posts Instantly</p>
+<h2>⚡ Caption Quick</h2>
+<p>Test AI Post Generator</p>
 </div>
 
 <div class="card">
@@ -78,51 +78,53 @@ button{
 
 <div class="card">
 <h3>🖼 Image Prompt</h3>
-<div class="result" id="image"></div>
+<div class="result" id="img">---</div>
 </div>
 
 <div class="card">
 <h3>📰 Title</h3>
-<div class="result" id="title"></div>
+<div class="result" id="title">---</div>
 </div>
 
 <div class="card">
 <h3>📄 Caption</h3>
-<div class="result" id="caption"></div>
+<div class="result" id="caption">---</div>
 </div>
 
 <div class="card">
 <h3># Hashtags</h3>
-<div class="result" id="tags"></div>
+<div class="result" id="tags">---</div>
 </div>
 
 </div>
 
 <script>
 function generate(){
-    let topic = document.getElementById("topic").value;
 
-    if(topic==""){
-        alert("Please enter a topic");
-        return;
-    }
+let topic = document.getElementById("topic").value;
 
-    // fake AI logic
-    let score = Math.floor(Math.random()*40)+60;
+if(topic===""){
+alert("Enter a topic!");
+return;
+}
 
-    document.getElementById("score").innerText = score + "%";
+// fake AI logic (demo)
+let score = Math.floor(Math.random()*40)+60;
 
-    document.getElementById("image").innerText =
-    "Cinematic ultra realistic image of " + topic + ", dramatic lighting, high detail";
+document.getElementById("score").innerText = score + "%";
 
-    document.getElementById("title").innerText =
-    topic + " ගැන ඔබ නොදන්නා දේ 5ක්";
+document.getElementById("img").innerText =
+"A cinematic ultra realistic image of " + topic + ", trending social media style, high detail";
 
-    document.getElementById("caption").innerText =
-    topic + " is changing the world with new technology and innovation. Stay updated!";
+document.getElementById("title").innerText =
+"Top Reasons Why " + topic + " is Going Viral in 2026";
 
-    document.getElementById("tags").innerText =
-    "#"+topic.replace(" ","") + " #viral #trending #AI #2026";
+document.getElementById("caption").innerText =
+topic + " is becoming a global trend with massive engagement on social media platforms.";
+
+document.getElementById("tags").innerText =
+"#" + topic.replace(" ","") + " #Trending #Viral #AI #SocialMedia";
+
 }
 </script>
 
