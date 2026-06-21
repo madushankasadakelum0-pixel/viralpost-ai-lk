@@ -1,39 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caption Quick</title>
+
+<style>
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+    margin:0;
+    padding:15px;
+}
+.container{max-width:600px;margin:auto;}
+.header{
+    background:#1877f2;
+    color:white;
+    padding:15px;
+    text-align:center;
+    border-radius:10px;
+}
+.card{
+    background:white;
+    padding:15px;
+    margin-top:15px;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+input,select{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border-radius:8px;
+}
+button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#1877f2;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+.result{
+    background:#f7f7f7;
+    padding:10px;
+    margin-top:10px;
+    border-radius:8px;
+}
+.percent{
+    font-size:35px;
+    color:green;
+    text-align:center;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="header">
+<h2>⚡ Caption Quick AI</h2>
+<p>Generate Viral Posts Instantly</p>
+</div>
+
+<div class="card">
+<input id="topic" type="text" placeholder="Enter your topic (e.g. AI Cars)">
+<button onclick="generate()">Generate</button>
+</div>
+
+<div class="card">
+<h3>🔥 Viral Score</h3>
+<div class="percent" id="score">--%</div>
+</div>
+
+<div class="card">
+<h3>🖼 Image Prompt</h3>
+<div class="result" id="image"></div>
+</div>
+
+<div class="card">
+<h3>📰 Title</h3>
+<div class="result" id="title"></div>
+</div>
+
+<div class="card">
+<h3>📄 Caption</h3>
+<div class="result" id="caption"></div>
+</div>
+
+<div class="card">
+<h3># Hashtags</h3>
+<div class="result" id="tags"></div>
+</div>
+
+</div>
+
+<script>
 function generate(){
-    let topic = document.getElementById("topic").value.toLowerCase();
+    let topic = document.getElementById("topic").value;
 
     if(topic==""){
         alert("Please enter a topic");
         return;
     }
 
-    // base score
-    let score = 50;
-
-    // smart keyword boost system
-    if(topic.includes("ai") || topic.includes("tech")){
-        score += 25;
-    }
-
-    if(topic.includes("car") || topic.includes("vehicle")){
-        score += 15;
-    }
-
-    if(topic.includes("money") || topic.includes("business")){
-        score += 20;
-    }
-
-    if(topic.includes("love") || topic.includes("life")){
-        score += 10;
-    }
-
-    if(topic.includes("news") || topic.includes("trending")){
-        score += 20;
-    }
-
-    // max limit
-    if(score > 99){
-        score = 99;
-    }
+    // fake AI logic
+    let score = Math.floor(Math.random()*40)+60;
 
     document.getElementById("score").innerText = score + "%";
 
@@ -44,8 +119,12 @@ function generate(){
     topic + " ගැන ඔබ නොදන්නා දේ 5ක්";
 
     document.getElementById("caption").innerText =
-    topic + " is trending globally. People are engaging with this topic more than ever.";
+    topic + " is changing the world with new technology and innovation. Stay updated!";
 
     document.getElementById("tags").innerText =
-    "#"+topic.replaceAll(" ","") + " #viral #trending #2026";
+    "#"+topic.replace(" ","") + " #viral #trending #AI #2026";
 }
+</script>
+
+</body>
+</html>
