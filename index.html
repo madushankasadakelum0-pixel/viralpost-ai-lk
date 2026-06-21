@@ -95,7 +95,28 @@ button{
 <h3># Hashtags</h3>
 <div class="result" id="tags">---</div>
 </div>
+<div class="card">
+<h3>🧠 Long Post Generator</h3>
 
+<input id="longTopic" type="text" placeholder="Enter Topic">
+
+<select id="style">
+<option>Informative</option>
+<option>Story Style</option>
+<option>Motivational</option>
+<option>Business</option>
+</select>
+
+<select id="length">
+<option value="1000">1000 Words</option>
+<option value="1500">1500 Words</option>
+<option value="2000">2000 Words</option>
+</select>
+
+<button onclick="generateLongPost()">Generate Long Post</button>
+
+<div class="result" id="longPost">---</div>
+</div>
 </div>
 
 <script>
